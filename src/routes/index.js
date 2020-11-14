@@ -1,3 +1,9 @@
+import RegisterComponent from "../containers/Register";
+import LoginComponent from "../containers/Login";
+import ContactsComponent from "../containers/Contacts";
+import CreateContactComponent from "../containers/CreateContact";
+
+
 const routes = [
     {
         path: "/auth/register",
@@ -15,8 +21,10 @@ const routes = [
         title: "Contacts",
     },
     {
-        path: "/auth/register",
-        component: RegisterComponent,
+        path: "/contacts/create",
+        component: CreateContactComponent,
         title: "Create Contact",
     }
 ]
+
+export default routes;
