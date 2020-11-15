@@ -1,16 +1,15 @@
 import React from 'react';
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
-import Home from './components/Home';
-import About from './components/About';
-import Greet from './components/Greet';
+import routes from './routes';
+import './App.css';
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/about" exact component={About} />
-        <Route path="/greet/:name" exact component={Greet} />
+        {routes.map((route, index) =>(
+          <Route key={index} path={route.path} exact render={(props)=> <route.component {...props}/>}></Route>
+        ))}
       </Switch>
     </Router>
   )
